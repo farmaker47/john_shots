@@ -74,7 +74,7 @@ fun CountComposable(
             Spacer(modifier = Modifier.height(8.dp))
 
             Text(
-                text = "1",
+                text = viewModel.uiState.gunshotNumber,
                 modifier = Modifier
                     .align(Alignment.CenterHorizontally)
                     .padding(8.dp),
