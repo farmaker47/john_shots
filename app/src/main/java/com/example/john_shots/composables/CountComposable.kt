@@ -56,7 +56,7 @@ fun CountComposable(
         Column(
             modifier = Modifier
                 .width(400.dp)
-                .height(340.dp)
+                //.height(340.dp)
                 .verticalScroll(state = rememberScrollState())
                 .align(Alignment.Center)
         ) {
@@ -71,7 +71,15 @@ fun CountComposable(
                 contentScale = ContentScale.Fit
             )
 
-            Spacer(modifier = Modifier.height(8.dp))
+            Spacer(modifier = Modifier.height(16.dp))
+
+            Text(
+                text = "Number of shots",
+                modifier = Modifier
+                    .align(Alignment.CenterHorizontally),
+                color = Color.White,
+                fontSize = 32.sp
+            )
 
             Text(
                 text = viewModel.uiState.gunshotNumber,
@@ -79,7 +87,7 @@ fun CountComposable(
                     .align(Alignment.CenterHorizontally)
                     .padding(8.dp),
                 color = Color.White,
-                fontSize = 80.sp
+                fontSize = 72.sp
             )
         }
     }
