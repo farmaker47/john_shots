@@ -97,7 +97,7 @@ class AudioClassifierHelper(
         val lengthInMilliSeconds =
             ((REQUIRE_INPUT_BUFFER_SIZE * 1.0f) / SAMPLING_RATE_IN_HZ) * 1000
 
-        val interval = (lengthInMilliSeconds * (1 - DEFAULT_OVERLAP)).toLong()
+        val interval = (lengthInMilliSeconds * DEFAULT_OVERLAP).toLong()
 
         executor?.scheduleAtFixedRate(
             classifyRunnable,
@@ -147,9 +147,9 @@ class AudioClassifierHelper(
 
     companion object {
         private const val TAG = "AudioClassifierHelper"
-        const val DISPLAY_THRESHOLD = 0.4f
+        const val DISPLAY_THRESHOLD = 0.6f
         const val DEFAULT_NUM_OF_RESULTS = 1
-        const val DEFAULT_OVERLAP = 0.25f
+        const val DEFAULT_OVERLAP = 0.5f
         const val GENERAL_MODEL = "gunshot_model.tflite"
 
         private const val SAMPLING_RATE_IN_HZ = 16000
